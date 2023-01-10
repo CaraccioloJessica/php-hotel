@@ -73,7 +73,7 @@
           foreach($hotels as $hotel) {
             $name = $hotel['name'];
             $description = $hotel['description'];
-            $parking = $hotel['parking'];
+            $parking = $hotel['parking'] ? '&check;' : '&cross;';
             $vote = $hotel['vote'];
             $distance = $hotel['distance_to_center'];
 
