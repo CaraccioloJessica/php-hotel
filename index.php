@@ -5,8 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PHP-Hotel</title>
-</head>
-<body>
+
   <!-- array di dati da stampare in pagina -->
   <?php
     $hotels = [
@@ -47,14 +46,27 @@
   	  ],
     ];
   ?>
+</head>
 
-  <!-- Inizio di codice da vedere in pagina -->
+<body>
+<!-- Inizio di codice da vedere in pagina -->
   <header>
-
+    <h1> Hotel list</h1>
   </header>
-
+  
   <main>
+  <!-- ciclo per singoli elementi array -->
+    <?php
+      foreach($hotels as $hotel) {
+        $name = $hotel["name"];
+        $description = $hotel["description"];
+        $parking = $hotel["parking"];
+        $vote = $hotel["vote"];
+        $distance = $hotel["distance_to_center"];
 
+        echo $name . '  ' . $description . '  ' . $parking . '  ' . $vote . '  ' . $distance . "<br>";
+      }
+    ?>
   </main>  
 </body>
 </html>
