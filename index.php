@@ -55,18 +55,40 @@
   </header>
   
   <main>
-  <!-- ciclo per singoli elementi array -->
-    <?php
-      foreach($hotels as $hotel) {
-        $name = $hotel["name"];
-        $description = $hotel["description"];
-        $parking = $hotel["parking"];
-        $vote = $hotel["vote"];
-        $distance = $hotel["distance_to_center"];
+    <!-- tabella per singoli elementi  -->
+    <table>
+      <thead>
+        <tr>
+          <th> Name </th>
+          <th> Description </th>
+          <th> Parking </th>
+          <th> Vote </th>
+          <th> Distance to center </th>
+        </tr>
+      </thead>
 
-        echo $name . '  ' . $description . '  ' . $parking . '  ' . $vote . '  ' . $distance . "<br>";
-      }
-    ?>
+      <tbody>
+        <!-- ciclo per singoli elementi array -->
+        <?php
+          foreach($hotels as $hotel) {
+            $name = $hotel['name'];
+            $description = $hotel['description'];
+            $parking = $hotel['parking'];
+            $vote = $hotel['vote'];
+            $distance = $hotel['distance_to_center'];
+
+            // tabella con elementi
+            echo "<tr>
+                  <td> $name </td>
+                  <td> $description </td>
+                  <td> $parking </td>
+                  <td> $vote </td>
+                  <td> $distance </td>
+                  </tr>";
+          }
+        ?>
+      </tbody>  
+    </table>
   </main>  
 </body>
 </html>
